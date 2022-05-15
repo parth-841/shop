@@ -1,0 +1,12 @@
+<%- include("includes/html-head.ejs"); %>
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>Products</h1>
+    <ul>
+        <% for(let product of products) { %>
+            <li> <%= product.title %> </li>
+        <% } %>
+    </ul>
+</body>
+</html>
