@@ -1,0 +1,41 @@
+<%- include("../includes/html-head"); %>
+</head>
+<body>
+    <%- include("../includes/navbar") %>
+    
+    <% if(edit) { %>
+        <h1 class="text-center my-3">Edit Product</h1>
+    <% } else { %>
+        <h1 class="text-center my-3">Add Product</h1>
+    <% } %>
+    <div class="container d-flex justify-content-center border p-5">
+        <form action="/admin/add-product" method="post" class="w-50">
+            <fieldset>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Title: </span>
+                    <input type="text" class="form-control" id="title" name="title" value=<% if(edit) { %> "<%= product.title %>" <% } %> >
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Image Url:</span>
+                    <input type="text" class="form-control" id="img-url" name="imageUrl" value=<% if(edit) { %> "<%= product.imageUrl %>" <% } %>>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Price:</span>
+                    <input type="text" class="form-control" id="price" name="price" value=<% if(edit) { %> "<%= product.price %>" <% } %>>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Description:</span>
+                    <textarea class="form-control" aria-label="With textarea" name="description"><% if(edit) { %><%= product.description %><% } %></textarea>
+                </div>
+
+                <% if(edit) { %>
+                    <input type="hidden" name="productId" value=<%= product.id %>>
+                    <button type="submit" class="btn btn-primary mt-3">update</button>
+                <% } else { %>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                <% } %>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

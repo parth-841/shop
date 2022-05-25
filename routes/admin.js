@@ -7,6 +7,11 @@ const router = express.Router();
 
 router.get("/add-product", admin.getAddProduct);
 
-router.post("/product", admin.postAddProduct);
+router.get("/edit-product/:productId", admin.getAddProduct);
 
+router.post("/add-product", admin.postAddProduct);
+
+router.post("/delete/:productId", admin.postDeleteProduct);
+
+router.get("/products",admin.getProducts);
 module.exports = router;

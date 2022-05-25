@@ -1,0 +1,17 @@
+<%- include("../includes/html-head.ejs") %>
+</head>
+<body>
+    <%- include("../includes/navbar") %>
+    <h1 class="text-center my-3">Product</h1>
+    <div class="container">
+        <div class="card text-dark bg-light mb-3">
+            <div class="card-header text-center font-weight-bold"><%= product.title %></div>
+            <div class="card-body">
+                <img class="w-100 h-75" src="<%= product.imageUrl %>" alt="<%= product.imgUrl %> not found">
+                <p class="card-text">price: <%= product.price %></p>
+                <p class="card-text">Description: <%= product.description %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
